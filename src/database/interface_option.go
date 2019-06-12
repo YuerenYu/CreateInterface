@@ -2,18 +2,25 @@ package database
 
 import (
 	"CreateInterface/src/utils"
+	"bufio"
 	"fmt"
+	"os"
 )
 
 func AddInterface() {
 	var interfaceInfo InterfaceInfo
 
 	utils.PrintAddPattern()
-	_, err := fmt.Scanf("%s", &interfaceInfo.Pattern)
+	reader := bufio.NewReader(os.Stdin)
+	var err error
+	interfaceInfo.Pattern, err = reader.ReadString('$')
+	interfaceInfo.Pattern = interfaceInfo.Pattern[:len(interfaceInfo.Pattern)-1]
 	utils.CheckError(err)
 
 	utils.PrintAddContent()
-	_, err = fmt.Scanf("%s", &interfaceInfo.Content)
+	reader = bufio.NewReader(os.Stdin)
+	interfaceInfo.Content, err = reader.ReadString('$')
+	interfaceInfo.Content = interfaceInfo.Content[:len(interfaceInfo.Content)-1]
 	utils.CheckError(err)
 
 	db, err := OpenDB()

@@ -13,11 +13,11 @@ func PrintWelcome() {
 }
 
 func PrintAddPattern() {
-	fmt.Println("Input your pattern.")
+	fmt.Println("Input your pattern, end with '$'.")
 }
 
 func PrintAddContent() {
-	fmt.Println("Input your content.")
+	fmt.Println("Input your content, end with '$'.")
 }
 
 func PrintHelp() {
