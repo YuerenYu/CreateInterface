@@ -1,9 +1,9 @@
-#Mock interface
+# Mock interface
 
-##Function
+## Function
 Fast mock interface improves development efficiency.
 
-##How to use
+## How to use
 >1. Run main.go
 >2. Add your interface use command "add"
 >3. Then input your pattern end with '$'
