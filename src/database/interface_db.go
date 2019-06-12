@@ -33,3 +33,8 @@ func InsertInfo(db *sql.DB, info InterfaceInfo) int64 {
 
 	return id
 }
+
+func CloseDB(db *sql.DB) {
+	err := db.Close()
+	utils.CheckError(err)
+}
