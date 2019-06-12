@@ -42,7 +42,13 @@ func ListInterface() {
 
 	for rows.Next() {
 		err = rows.Scan(&interfaceInfo.Id, &interfaceInfo.Pattern, &interfaceInfo.Content, &interfaceInfo.InsertTime)
-		fmt.Println(interfaceInfo)
+		fmt.Printf("-------------\n"+
+			"ID:%d\n"+
+			"Pattern:%s\n"+
+			"Content:%s\n"+
+			"UpdateTime:%s\n",
+			interfaceInfo.Id, interfaceInfo.Pattern, interfaceInfo.Content,
+			interfaceInfo.InsertTime.Format("2006-01-02 15:04:05"))
 	}
 
 	err = rows.Close()

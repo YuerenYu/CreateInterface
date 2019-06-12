@@ -9,7 +9,8 @@ func CheckError(err error) {
 }
 
 func PrintWelcome() {
-	fmt.Println("Welcome~")
+	fmt.Println("Welcome~\n" +
+		"Enter help for usage hints.")
 }
 
 func PrintAddPattern() {
