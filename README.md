@@ -11,7 +11,7 @@ Fast mock interface improves development efficiency.
 >5. Finally interface added
 
 Tips: 
-> The pattern you input must start with '/'
+> The pattern you input must start with '/'  
 > The newly added interface restarts take effect.
 
 ## Visit interface
