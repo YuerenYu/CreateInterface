@@ -12,7 +12,10 @@ METHOD 1:(You must have go environment)
 >5. Finally interface added
 
 METHOD 2:(Don't need go environment)
->Run CreateInterface/bin/main
+>1. For MacOS:
+>>Run CreateInterface/bin/main
+>2. For Windows:
+>>Run CreateInterface/bin/main.exe
 
 Tips: 
 > The pattern you input must start with '/'  
