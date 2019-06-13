@@ -18,6 +18,7 @@ const database = "src/database/database.db"
 
 func OpenDB() (*sql.DB, error) {
 	filePath, _ := filepath.Abs(database)
+	// fmt.Println(filePath) //File path is a very headache
 	return sql.Open("sqlite3", filePath)
 }
 
