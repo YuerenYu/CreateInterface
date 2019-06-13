@@ -11,7 +11,7 @@ METHOD 1:(You must have go environment)
 >4. Next input your content end with '$'
 >5. Finally interface added
 
-METHOD 2:(Don't need go environment)
+METHOD 2:(Don't need go environment, for MacOS)
 >Run CreateInterface/bin/main
 
 Tips: 
