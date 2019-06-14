@@ -19,7 +19,6 @@ METHOD 2:(Don't need go environment)
 
 Tips: 
 > The pattern you input must start with '/'  
-> The newly added interface restarts take effect.
 
 ## Visit interface
 >Default port is 4000  

@@ -29,7 +29,7 @@ func PrintHelp() {
 }
 
 func PrintAddDone() {
-	fmt.Println("Add Done, restart takes effect！")
+	fmt.Println("Add Done, the new interface has taken effect.")
 }
 
 func PrintDeleteDone() {

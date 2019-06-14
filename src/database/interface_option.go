@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-func AddInterface() {
+func AddInterface(ch chan InterfaceInfo) {
 	var interfaceInfo InterfaceInfo
 
 	utils.PrintAddPattern()
@@ -28,6 +28,7 @@ func AddInterface() {
 	id := InsertInfo(db, interfaceInfo)
 	if id > 0 {
 		utils.PrintAddDone()
+		ch <- interfaceInfo
 	}
 }
 
