@@ -13,7 +13,7 @@ METHOD 1:(You must have go environment)
 
 METHOD 2:(Don't need go environment)
 >1. For MacOS:
->>Run CreateInterface/bin/main
+>>Run CreateInterface/bin/mainMacOS
 >2. For Windows:
 >>Run CreateInterface/bin/main.exe
 
