@@ -2,6 +2,7 @@ package sys
 
 import (
 	"CreateInterface/src/database"
+	"CreateInterface/src/gracehttp"
 	"CreateInterface/src/utils"
 	"bufio"
 	"fmt"
@@ -61,20 +62,22 @@ func RegisterHandle() {
 	utils.CheckError(err)
 }
 
-func RegisterHandleSingle(server chan *http.Server, ch chan database.InterfaceInfo) {
+func RegisterHandleSingle(server chan gracehttp.Server, ch chan database.InterfaceInfo) {
 	for info := range ch {
 		http.Handle(info.Pattern, String(info.Content))
-		RestartServer(server)
 	}
+	srv := <- server
+	srv.StartNewProcess()
 }
 
-func StartServer(server chan *http.Server) {
-	srv := &http.Server{Addr: ":4000"}
-	server <- srv
+func StartServer(server chan gracehttp.Server) {
+	//srv := &http.Server{Addr: ":4000"}
+	//server <- srv
+	address := ":4000"
 	wg := sync.WaitGroup{}
 	wg.Add(1)
 	go func() {
-		if err := srv.ListenAndServe(); err != nil {
+		if err := gracehttp.ListenAndServe(address, nil); err != nil {
 			//restart server, err is normal.
 		}
 		wg.Done()
@@ -82,14 +85,14 @@ func StartServer(server chan *http.Server) {
 	wg.Wait()
 }
 
-func stopServer(server chan *http.Server) {
+func stopServer(server chan gracehttp.Server) {
 	srv := <-server
 	if err := srv.Shutdown(nil); err != nil {
 		log.Println(err)
 	}
 }
 
-func RestartServer(server chan *http.Server) {
+func RestartServer(server chan gracehttp.Server) {
 	stopServer(server)
 	StartServer(server)
 }

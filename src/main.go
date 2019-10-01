@@ -5,13 +5,13 @@ import (
 	"CreateInterface/src/sys"
 	"CreateInterface/src/utils"
 	_ "github.com/mattn/go-sqlite3"
-	"net/http"
+	"github.com/tabalt/gracehttp"
 	"sync"
 )
 
 func main() {
 	utils.PrintWelcome()
-	SINGLE := make(chan *http.Server, 1)
+	SINGLE := make(chan gracehttp.Server, 1)
 	dataChan := make(chan database.InterfaceInfo)
 	wg := sync.WaitGroup{}
 
